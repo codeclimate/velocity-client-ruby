@@ -12,3 +12,9 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+def set_api_token
+  Velocity.configure do |config|
+    config.api_token = ENV["VELOCITY_API_TOKEN"]
+  end
+end
