@@ -9,6 +9,9 @@ require "velocity"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+Velocity.configure do |config|
+  config.api_token = "0821d7b54d71a56674dbeef477c55ce816c9add3f696fa425d42b69bb60b"
+end
 
 require "irb"
 IRB.start(__FILE__)

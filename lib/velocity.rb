@@ -1,3 +1,5 @@
+require "velocity/api"
+require "velocity/contributor"
 module Velocity
   class << self
     attr_accessor :configuration
