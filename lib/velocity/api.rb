@@ -2,7 +2,13 @@ require 'httparty'
 
 module Velocity
   class Api
+    class NotFoundError < StandardError; end
+    class UnauthorizedError < StandardError; end
+    class InternalServerError < StandardError; end
+    class BadRequestError < StandardError; end
+
     include HTTParty
+
     base_uri "https://api.velocity.codeclimate.com/v1"
 
     def initialize
@@ -14,19 +20,24 @@ module Velocity
     end
 
     def fetch_contributors(args)
-        response = self.class.get("/people", @options.merge({
-          query: build_query_attributes(args)
-        }))
+      parse_response(self.class.get("/people", @options.merge({
+        query: build_query_attributes(args)
+      })))
+    end
+
+    def parse_response(response)
       case response.code
         when 200
-          JSON.parse(response.body)
-        when 404
-          raise "not found"
-        when 500...600
-          raise "error"
-        else
+          JSON.parse(response.body)["data"]
+        when 400
           errors = JSON.parse(response.body)["errors"]
-          raise errors.first["title"]
+          raise BadRequestError.new(errors.first["title"] + ": " + errors.first["detail"])
+        when 401
+          raise UnauthorizedError.new("401 Unauthorized");
+        when 404
+          raise NotFoundError.new("404 not found error");
+        else
+          raise InternalServerError.new("#{response.code} something went wrong: #{response.body}")
       end
     end
 

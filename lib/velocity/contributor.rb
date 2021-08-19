@@ -14,15 +14,8 @@ module Velocity
       end
     end
 
-    def self.all
-      perform_request.map do |contributor|
-        new(id: contributor["id"], name: contributor["attributes"]["name"], email: contributor["attributes"]["email"])
-      end
-    end
-
     def self.perform_request(args = {})
-      contributors = Velocity::Api.new.fetch_contributors(args)
-      contributors["data"]
+      Velocity::Api.new.fetch_contributors(args)
     end
   end
 end
