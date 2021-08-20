@@ -15,7 +15,7 @@ module Velocity
     end
 
     def self.perform_request(args = {})
-      Velocity::Api.new.fetch_contributors(args)
+      Velocity::Api::People.new(args).fetch
     end
   end
 end

@@ -1,5 +1,8 @@
-require "velocity/api"
+require "velocity/api/base"
+require "velocity/api/people"
+require "velocity/api/invite"
 require "velocity/contributor"
+require "velocity/invite"
 require "dotenv/load"
 
 module Velocity
