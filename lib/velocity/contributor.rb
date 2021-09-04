@@ -14,8 +14,12 @@ module Velocity
       end
     end
 
+    def self.find_by(args)
+      where(args).first
+    end
+
     def self.perform_request(args = {})
-      Velocity::Api.new.fetch_contributors(args)
+      Velocity::Api::People.new(args).fetch
     end
   end
 end
