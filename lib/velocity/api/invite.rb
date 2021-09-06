@@ -1,7 +1,7 @@
 module Velocity
   module Api
     class Invite < Velocity::Api::Base
-      def send
+      def create
         parse_response(self.class.post("/invitations", options.merge(body)))
       end
 
