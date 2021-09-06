@@ -1,5 +1,13 @@
-require "velocity/api"
+require "initializers/string"
+require "initializers/hash"
+require "velocity/api/base"
+require "velocity/api/role"
+require "velocity/api/people"
+require "velocity/api/invite"
+require "velocity/base"
+require "velocity/role"
 require "velocity/contributor"
+require "velocity/invite"
 require "dotenv/load"
 
 module Velocity
