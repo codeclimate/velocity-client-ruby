@@ -45,7 +45,7 @@ module Velocity
 
       def build_query
         args.map do |key, value|
-          "filter[#{key.to_s}][eq]=#{value}"
+          "filter[#{key.to_s}][contains]=#{value}"
         end.join("&")
       end
     end
