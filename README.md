@@ -21,16 +21,29 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-Velocity.configure do |config|
-  config.api_token = "token"
-end
+require "velocity"
 
-CSV.parse(File.read("contributors.csv"), headers: true).each do |contributor|
-  contributor = Velocity::Contributor.find(contributor.id)
+contributors_list = CSV.parse(File.read('./examples/contributors-list.csv'), headers: true)
 
-  if contributor.nil?
-    Velocity::Invite.create(email: contributor.email)
-  end
+contributors_list.map do |contributor|
+	velocity_contributor = Velocity::Contributor.find_by(name: contributor['name'])
+
+	if velocity_contributor
+		puts "Contributor #{velocity_contributor.id} found.\n#{velocity_contributor.inspect}"
+	else
+		role = Velocity::Role.find_by(name: contributor['role_name'])
+
+		raise 'Role not found' if role.nil?
+
+		invite = Velocity::Invite.create(
+      name: contributor['name'],
+      email: contributor['email'],
+      job_function: contributor['job_function'],
+      role_ids: [role.id]
+    )
+
+		puts "Invite #{invite.id} sent.\n#{invite.inspect}"
+	end
 end
 ```
 
