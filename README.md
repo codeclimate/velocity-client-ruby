@@ -18,6 +18,17 @@ Or install it yourself as:
 
     $ gem install velocity_client_ruby
 
+## Configuration
+
+In order to be able to Access Velocity API you need to have a token.
+You can set it up all your environemnt variables using configure method:
+
+```ruby
+  Velocity.configure do |config|
+    config.api_token = "abc"
+  end
+```
+
 ## Usage
 
 ```ruby
