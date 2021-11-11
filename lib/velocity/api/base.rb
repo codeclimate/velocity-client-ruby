@@ -45,8 +45,17 @@ module Velocity
 
       def build_query
         args.map do |key, value|
-          "filter[#{key.to_s}][contains]=#{value}"
-        end.join("&")
+          "filter[#{key.to_s}][#{operation(key)}]=#{value}"
+        end.join("&") + "&page[size]=100"
+      end
+
+      def operation(key)
+        case key.to_sym
+        when :id
+          "eq"
+        else
+          "contains"
+        end
       end
     end
   end
