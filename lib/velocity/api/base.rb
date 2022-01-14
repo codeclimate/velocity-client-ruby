@@ -20,14 +20,19 @@ module Velocity
         @args = args
       end
 
-      def options
-        {
-          headers: {
-            "Authorization" => "Bearer #{Velocity.configuration.api_token}",
-            "Content-Type" => "application/vnd.api+json",
-          }
-        }
+      def get(url)
+        parse_response(self.class.get(url, options.merge(query: build_query)))
       end
+
+      def post(url, body)
+        parse_response(self.class.post("/invitations", options.merge(body)))
+      end
+
+      def put(url, body)
+        parse_response(self.class.put(url, options.merge(body)))
+      end
+
+      private
 
       def parse_response(response)
         case response.code
@@ -43,6 +48,15 @@ module Velocity
           else
             raise InternalServerError.new("#{response.code} something went wrong: #{response.body}")
         end
+      end
+
+      def options
+        {
+          headers: {
+            "Authorization" => "Bearer #{Velocity.configuration.api_token}",
+            "Content-Type" => "application/vnd.api+json",
+          }
+        }
       end
 
       def build_query

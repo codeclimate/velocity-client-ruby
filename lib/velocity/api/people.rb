@@ -2,11 +2,11 @@ module Velocity
   module Api
     class People < Velocity::Api::Base
       def fetch
-        parse_response(self.class.get("/people", options.merge(query: build_query)))
+        get("/people")
       end
 
       def update
-        parse_response(self.class.put("/people/#{args.fetch(:id)}", options.merge(body)))
+        put("/people/#{args.fetch(:id)}", body)
       end
 
       private
