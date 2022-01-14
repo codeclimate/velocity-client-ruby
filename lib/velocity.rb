@@ -4,10 +4,12 @@ require "velocity/api/base"
 require "velocity/api/role"
 require "velocity/api/people"
 require "velocity/api/invite"
+require "velocity/api/team"
 require "velocity/base"
 require "velocity/role"
 require "velocity/contributor"
 require "velocity/invite"
+require "velocity/team"
 require "dotenv/load"
 
 module Velocity

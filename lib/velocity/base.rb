@@ -19,6 +19,12 @@ module Velocity
       new(data["attributes"].merge(id: data["id"]))
     end
 
+    def self.all
+      resource_class.new({}).fetch.map do |data|
+        new(data["attributes"].merge(id: data["id"]))
+      end
+    end
+
     def self.where(args)
       resource_class.new(args).fetch.map do |data|
         new(data["attributes"].merge(id: data["id"]))
@@ -31,6 +37,11 @@ module Velocity
 
     def self.find_by!(args)
       where(args).first or raise NotFoundError, "record not found with #{args.inspect}"
+    end
+
+    def update(args)
+      data = self.class.resource_class.new(args.merge(id: self.id)).update
+      self.class.new(data["attributes"].merge(id: data["id"]))
     end
   end
 end

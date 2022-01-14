@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.velocity.codeclimate.com/v1/roles?page%5Bsize%5D=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TOKEN>
+      Content-Type:
+      - application/vnd.api+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Jan 2022 14:19:28 GMT
+      Content-Type:
+      - application/vnd.api+json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=31556952
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 8e96a461-00f9-468e-833f-5dd95e376f43
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"3a1b57dc1bee9414b1ef66809692a47e"
+      X-Runtime:
+      - '0.024074'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - 'default-src ''self'' heapanalytics.com; base-uri ''self''; block-all-mixed-content;
+        child-src ''self'' share.intercom.io intercom-sheets.com www.youtube.com player.vimeo.com
+        fast.wistia.net js.stripe.com hooks.stripe.com checkout.stripe.com headway-widget.net
+        *.trychameleon.com *.chmln-cdn.com reports.codeclimate.com; connect-src ''self''
+        api.intercom.io api-iam.intercom.io api-ping.intercom.io nexus-websocket-a.intercom.io
+        nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io nexus-long-poller-b.intercom.io
+        wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io *.intercomcdn.com
+        uploads.intercomusercontent.com app.getsentry.com *.bugsnag.com heapanalytics.com
+        *.fullstory.com api.segment.io api.stripe.com checkout.stripe.com *.trychameleon.com
+        wss://*.trychameleon.com chmln-east-secure.s3.amazonaws.com web.delighted.com
+        wss://ws.pusherapp.com bam.nr-data.net bam-cell.nr-data.net; font-src ''self''
+        data: d3fx0x68qhy8m4.cloudfront.net dwv6i237vhjwj.cloudfront.net js.intercomcdn.com
+        heapanalytics.com *.chmln-cdn.com fonts.gstatic.com; form-action ''self''
+        export.highcharts.com intercom.help github.com gitlab.com bitbucket.org accounts.google.com
+        id.atlassian.com; frame-ancestors ''self''; img-src ''self'' data: d3fx0x68qhy8m4.cloudfront.net
+        js.intercomcdn.com static.intercomassets.com downloads.intercomcdn.com uploads.intercomusercontent.com
+        gifs.intercomcdn.com intercom.help heapanalytics.com platform.slack-edge.com
+        *.stripe.com pbs.twimg.com gravatar.com secure.gravatar.com assets.gitlab-static.net
+        gitlab.com *.githubusercontent.com bitbucket.org d301sr5gafysq2.cloudfront.net/
+        avatar-cdn.atlassian.com bitbucket-assetroot.s3.amazonaws.com i0.wp.com i1.wp.com
+        i2.wp.com *.chmln-cdn.com *.atl-paas.net; manifest-src ''self''; media-src
+        ''self'' js.intercomcdn.com; object-src ''none''; script-src ''self'' ''unsafe-inline''
+        ''unsafe-eval'' d3fx0x68qhy8m4.cloudfront.net d2wy8f7a9ursnm.cloudfront.net
+        app.intercom.io widget.intercom.io js.intercomcdn.com cdn.heapanalytics.com
+        heapanalytics.com cdn.segment.com *.fullstory.com fullstory.com js-agent.newrelic.com
+        bam.nr-data.net bam-cell.nr-data.net checkout.stripe.com js.stripe.com cdn.headwayapp.co
+        *.trychameleon.com *.chmln-cdn.com d2yyd1h5u9mauk.cloudfront.net; style-src
+        ''self'' ''unsafe-inline'' d3fx0x68qhy8m4.cloudfront.net hello.myfonts.net
+        dwv6i237vhjwj.cloudfront.net heapanalytics.com cdn.headwayapp.co; worker-src
+        ''self''; report-uri /csp_reports'
+      X-Powered-By:
+      - Phusion Passenger 6.0.4
+      Server:
+      - nginx + Phusion Passenger 6.0.4
+      Cross-Origin-Opener-Policy:
+      - same-origin
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"2","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/2"},"attributes":{"name":"Manager","description":"Access
+        to metrics about their teams and team members","system":true,"readonly":true}},{"id":"5252","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/5252"},"attributes":{"name":"Sales
+        Engineer Homework","description":null,"system":false,"readonly":false}},{"id":"5287","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/5287"},"attributes":{"name":"Testing
+        a Limited CTO Role","description":null,"system":false,"readonly":false}},{"id":"5519","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/5519"},"attributes":{"name":"Administrator","description":"Full
+        access to configuration and data","system":true,"readonly":true}},{"id":"5520","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/5520"},"attributes":{"name":"Executive","description":"Access
+        to organization-wide data, without individual metrics","system":true,"readonly":true}},{"id":"5522","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/5522"},"attributes":{"name":"Engineer","description":"Access
+        limited to Targets related to their work","system":true,"readonly":true}},{"id":"7486","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/7486"},"attributes":{"name":"Some
+        new role","description":"","system":false,"readonly":false}},{"id":"15508","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/15508"},"attributes":{"name":"Test
+        Manager","description":"","system":false,"readonly":false}},{"id":"15599","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/15599"},"attributes":{"name":"+
+        Workstreams","description":"","system":false,"readonly":false}},{"id":"15945","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/15945"},"attributes":{"name":"Pen
+        Test ","description":"Role to test API access from pen test","system":false,"readonly":false}},{"id":"17224","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/17224"},"attributes":{"name":"Example
+        Role - limited","description":"can view other teams, not individuals","system":false,"readonly":false}},{"id":"18215","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/18215"},"attributes":{"name":"New
+        Test Role","description":"","system":false,"readonly":false}},{"id":"19348","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/19348"},"attributes":{"name":"Example
+        Role 2","description":"","system":false,"readonly":false}},{"id":"20231","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/20231"},"attributes":{"name":"Manager
+        Limited - Bryan","description":"","system":false,"readonly":false}},{"id":"20260","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/20260"},"attributes":{"name":"Engineer
+        Manager Test","description":"testing","system":false,"readonly":false}},{"id":"20856","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/20856"},"attributes":{"name":"Testingtetsting","description":"","system":false,"readonly":false}},{"id":"21086","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/21086"},"attributes":{"name":"Test","description":"","system":false,"readonly":false}},{"id":"21217","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/21217"},"attributes":{"name":"Example","description":"","system":false,"readonly":false}},{"id":"22240","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/22240"},"attributes":{"name":"Testing
+        ","description":"","system":false,"readonly":false}},{"id":"22640","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/22640"},"attributes":{"name":"test","description":"","system":false,"readonly":false}},{"id":"23242","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/23242"},"attributes":{"name":"Example","description":"","system":false,"readonly":false}},{"id":"23263","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/23263"},"attributes":{"name":"Jira
+        Writer","description":"Have the ability to manage a project, assign issues
+        and interact with Project Management tools, using the integration to make
+        changes to the source tool","system":false,"readonly":false}},{"id":"23824","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/23824"},"attributes":{"name":"testtest","description":"","system":false,"readonly":false}},{"id":"23830","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/23830"},"attributes":{"name":"Indeed
+        test","description":"","system":false,"readonly":false}},{"id":"23997","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/23997"},"attributes":{"name":"testss","description":"","system":false,"readonly":false}},{"id":"24591","type":"roles","links":{"self":"https://api.velocity.codeclimate.com/v1/roles/24591"},"attributes":{"name":"sample","description":"","system":false,"readonly":false}}],"meta":{"responseCount":26,"totalCount":26}}'
+  recorded_at: Fri, 14 Jan 2022 14:19:28 GMT
+recorded_with: VCR 6.0.0

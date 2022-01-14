@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.velocity.codeclimate.com/v1/people?filter%5Bemail%5D%5Bcontains%5D=vera@codeclimate.com&page%5Bsize%5D=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TOKEN>
+      Content-Type:
+      - application/vnd.api+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 14 Jan 2022 14:37:58 GMT
+      Content-Type:
+      - application/vnd.api+json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Vary:
+      - Origin
+      Strict-Transport-Security:
+      - max-age=31556952
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - c84a266d-b5de-4244-a161-263ea9da7e59
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"35ae34c2ec63fbbc09ab3d292bfe1eb6"
+      X-Runtime:
+      - '0.074375'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - 'default-src ''self'' heapanalytics.com; base-uri ''self''; block-all-mixed-content;
+        child-src ''self'' share.intercom.io intercom-sheets.com www.youtube.com player.vimeo.com
+        fast.wistia.net js.stripe.com hooks.stripe.com checkout.stripe.com headway-widget.net
+        *.trychameleon.com *.chmln-cdn.com reports.codeclimate.com; connect-src ''self''
+        api.intercom.io api-iam.intercom.io api-ping.intercom.io nexus-websocket-a.intercom.io
+        nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io nexus-long-poller-b.intercom.io
+        wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io *.intercomcdn.com
+        uploads.intercomusercontent.com app.getsentry.com *.bugsnag.com heapanalytics.com
+        *.fullstory.com api.segment.io api.stripe.com checkout.stripe.com *.trychameleon.com
+        wss://*.trychameleon.com chmln-east-secure.s3.amazonaws.com web.delighted.com
+        wss://ws.pusherapp.com bam.nr-data.net bam-cell.nr-data.net; font-src ''self''
+        data: d3fx0x68qhy8m4.cloudfront.net dwv6i237vhjwj.cloudfront.net js.intercomcdn.com
+        heapanalytics.com *.chmln-cdn.com fonts.gstatic.com; form-action ''self''
+        export.highcharts.com intercom.help github.com gitlab.com bitbucket.org accounts.google.com
+        id.atlassian.com; frame-ancestors ''self''; img-src ''self'' data: d3fx0x68qhy8m4.cloudfront.net
+        js.intercomcdn.com static.intercomassets.com downloads.intercomcdn.com uploads.intercomusercontent.com
+        gifs.intercomcdn.com intercom.help heapanalytics.com platform.slack-edge.com
+        *.stripe.com pbs.twimg.com gravatar.com secure.gravatar.com assets.gitlab-static.net
+        gitlab.com *.githubusercontent.com bitbucket.org d301sr5gafysq2.cloudfront.net/
+        avatar-cdn.atlassian.com bitbucket-assetroot.s3.amazonaws.com i0.wp.com i1.wp.com
+        i2.wp.com *.chmln-cdn.com *.atl-paas.net; manifest-src ''self''; media-src
+        ''self'' js.intercomcdn.com; object-src ''none''; script-src ''self'' ''unsafe-inline''
+        ''unsafe-eval'' d3fx0x68qhy8m4.cloudfront.net d2wy8f7a9ursnm.cloudfront.net
+        app.intercom.io widget.intercom.io js.intercomcdn.com cdn.heapanalytics.com
+        heapanalytics.com cdn.segment.com *.fullstory.com fullstory.com js-agent.newrelic.com
+        bam.nr-data.net bam-cell.nr-data.net checkout.stripe.com js.stripe.com cdn.headwayapp.co
+        *.trychameleon.com *.chmln-cdn.com d2yyd1h5u9mauk.cloudfront.net; style-src
+        ''self'' ''unsafe-inline'' d3fx0x68qhy8m4.cloudfront.net hello.myfonts.net
+        dwv6i237vhjwj.cloudfront.net heapanalytics.com cdn.headwayapp.co; worker-src
+        ''self''; report-uri /csp_reports'
+      X-Powered-By:
+      - Phusion Passenger 6.0.4
+      Server:
+      - nginx + Phusion Passenger 6.0.4
+      Cross-Origin-Opener-Policy:
+      - same-origin
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"486976","type":"people","links":{"self":"https://api.velocity.codeclimate.com/v1/people/486976"},"attributes":{"name":"Vera
+        Protopopova","email":"vera@codeclimate.com","createdAt":"2020-02-18T20:15:33.601Z","hasUser":true,"endDate":null,"startDate":null,"visible":true,"lastActiveAt":"2022-01-13T22:30:34.000Z"},"relationships":{"teams":{"links":{"related":"https://api.velocity.codeclimate.com/v1/people/486976/teams"}}}}],"meta":{"responseCount":1,"totalCount":1}}'
+  recorded_at: Fri, 14 Jan 2022 14:37:58 GMT
+recorded_with: VCR 6.0.0

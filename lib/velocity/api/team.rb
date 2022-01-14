@@ -1,8 +1,8 @@
 module Velocity
   module Api
-    class Role < Velocity::Api::Base
+    class Team < Velocity::Api::Base
       def fetch
-        get("/roles")
+        get("/teams")
       end
     end
   end
