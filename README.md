@@ -25,7 +25,7 @@ You can set it up all your environemnt variables using configure method:
 
 ```ruby
   Velocity.configure do |config|
-    config.api_token = "abc"
+    config.api_token = "<TOKEN>"
   end
 ```
 
@@ -34,25 +34,24 @@ You can set it up all your environemnt variables using configure method:
 ```ruby
 require "velocity"
 
-contributors_list = CSV.parse(File.read('./examples/contributors-list.csv'), headers: true)
+list = CSV.parse(File.read('./examples/contributors.csv'), headers: true)
 
-contributors_list.map do |contributor|
-  velocity_contributor = Velocity::Contributor.find_by(name: contributor['name'])
+list.map do |contributor_data|
+  contributor = Velocity::Contributor.find_by(name: contributor_data['name'])
 
-  if velocity_contributor
-     puts "Contributor #{velocity_contributor.id} found.\n#{velocity_contributor.inspect}"
+  if contributor
+     puts "Contributor #{contributor.id} found."
   else
-    role = Velocity::Role.find_by(name: contributor['role_name'])
-    raise 'Role not found' if role.nil?
+    role = Velocity::Role.find_by(name: contributor_data['role_name'])
 
     invite = Velocity::Invite.create(
-      name: contributor['name'],
-      email: contributor['email'],
-      job_function: contributor['job_function'],
+      name: contributor_date['name'],
+      email: contributor_data['email'],
+      job_function: contributor_data['job_function'],
       role_ids: [role.id]
     )
 
-    puts "Invite #{invite.id} sent.\n#{invite.inspect}"
+    puts "Invite #{invite.id} sent."
   end
 end
 ```
