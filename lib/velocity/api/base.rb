@@ -8,6 +8,8 @@ module Velocity
       class InternalServerError < StandardError; end
       class BadRequestError < StandardError; end
 
+      PAGE_SIZE = 100
+
       include HTTParty
 
       base_uri "https://api.velocity.codeclimate.com/v1"
